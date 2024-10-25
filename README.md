@@ -113,10 +113,10 @@ npm install
 Execute o seguinte comando para iniciar o servidor de desenvolvimento:
 
 ```bash
-npm start
+npm run dev
 ```
 
-A aplicação estará acessível em [http://localhost:3000](http://localhost:3000).
+A aplicação estará acessível em [http://localhost:5173](http://localhost:5173).
 
 ### Funcionalidades
 
@@ -133,14 +133,5 @@ A aplicação estará acessível em [http://localhost:3000](http://localhost:300
 
    ```bash
    cd cli
-   npm test
-   ```
-
-### Rodando Testes no Frontend
-
-1. Para rodar os testes no frontend:
-
-   ```bash
-   cd ../frontend
    npm test
    ```
