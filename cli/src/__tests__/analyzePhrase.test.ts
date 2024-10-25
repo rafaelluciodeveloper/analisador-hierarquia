@@ -15,12 +15,12 @@ test('análise de frase com mais de 5000 palavras', async () => {
   
   const largeText = 'Papagaio '.repeat(5001);
   const phraseStream = Readable.from(largeText);
-  const depth = 2;
-
+  const depth = 4;
   const result = await analyzePhraseStream(hierarchy, phraseStream, depth);
   
   expect(result['Pássaros']).toEqual(5001);
 });
+
 
 test('análise de frase com múltiplas palavras de diferentes categorias', async () => {
   const hierarchy = {
@@ -39,7 +39,7 @@ test('análise de frase com múltiplas palavras de diferentes categorias', async
 
   const phrase = 'Leão Papagaio Elefante';
   const phraseStream = Readable.from(phrase);
-  const depth = 2;
+  const depth = 4;
 
   const result = await analyzePhraseStream(hierarchy, phraseStream, depth);
 
@@ -47,6 +47,7 @@ test('análise de frase com múltiplas palavras de diferentes categorias', async
   expect(result['Pássaros']).toEqual(1);
   expect(result['Herbívoros']).toEqual(1);
 });
+
 
 test('análise de frase sem correspondência na hierarquia', async () => {
   const hierarchy = {
@@ -101,9 +102,9 @@ test('análise de frase com palavras duplicadas', async () => {
 
   const phrase = 'Papagaio Canário Papagaio Papagaio';
   const phraseStream = Readable.from(phrase);
-  const depth = 2;
+  const depth = 4;
 
   const result = await analyzePhraseStream(hierarchy, phraseStream, depth);
 
-  expect(result['Pássaros']).toEqual(3);
+  expect(result['Pássaros']).toEqual(4);
 });
