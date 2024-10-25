@@ -129,7 +129,7 @@ A aplicação estará acessível em [http://localhost:3000](http://localhost:300
 
 ### Rodando Testes na CLI
 
-1. Para executar os testes na CLI, incluindo o teste com um texto de mais de 5000 palavras:
+1. Para executar os testes na CLI
 
    ```bash
    cd cli
