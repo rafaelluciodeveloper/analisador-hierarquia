@@ -1,0 +1,20 @@
+{
+  "name": "analisador-hierarquia-cli",
+  "version": "1.0.0",
+  "description": "Aplicação CLI para análise de hierarquia de palavras",
+  "main": "dist/cli.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "analyze": "npm run build && node dist/cli.js analyze --depth 2 \"Eu amo papagaios\" --verbose",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Rafael Lucio",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.8.0",
+    "typescript": "^5.6.3"
+  }
+}
