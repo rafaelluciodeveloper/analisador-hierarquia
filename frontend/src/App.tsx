@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import HierarchyEditor from './components/HierarchyEditor';
 import SaveButton from './components/SaveButton';
-import { HierarchyNode } from './types';
+import { Hierarchy } from './type';
+import { useState } from 'react';
 
 const App: React.FC = () => {
-  const [hierarchy, setHierarchy] = useState<HierarchyNode[]>([]);
+  const [hierarchy, setHierarchy] = useState<Hierarchy>({});
 
-  // Função para atualizar a hierarquia a partir do componente HierarchyEditor
-  const updateHierarchy = (newHierarchy: HierarchyNode[]) => {
+  const updateHierarchy = (newHierarchy: Hierarchy) => {
     setHierarchy(newHierarchy);
   };
 
   return (
-    <div>
-      <h2>Editor de Hierarquia de Palavras</h2>
-      <HierarchyEditor hierarchy={hierarchy} onHierarchyChange={updateHierarchy} />
-      <SaveButton hierarchy={hierarchy} />
+    <div className="container mt-5">
+      <h2 className="mb-4 text-center">Editor de Hierarquia de Palavras</h2>
+      <div className="row">
+        <div className="col-md-8">
+          <HierarchyEditor hierarchy={hierarchy} onHierarchyChange={updateHierarchy} />
+        </div>
+        <div className="col-md-4 d-flex align-items-start">
+          <SaveButton hierarchy={hierarchy} />
+        </div>
+      </div>
     </div>
   );
 };
