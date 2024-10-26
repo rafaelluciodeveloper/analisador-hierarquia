@@ -1,39 +1,43 @@
-import {loadHierarchy} from '../utils/loadHierarchy';
 import * as fs from 'fs';
 import path from 'path';
+import { loadHierarchy } from '../utils/loadHierarchy';
 
 jest.mock('fs');
 
 describe('loadHierarchy', () => {
-    const hierarchyMock = {
+    const mockFilePath = path.resolve(__dirname, '../../dicts/hierarchy.json');
+    const mockData = {
         Natureza: {
             Animais: {
-                Mamíferos: {
-                    Carnívoros: ["Leões", "Tigres"],
-                    Herbívoros: ["Elefantes", "Girafas"]
+                Aves: {
+                    Pássaros: ["Papagaio", "Canário"]
                 }
             }
         }
     };
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        // Simula o comportamento de fs.readFileSync para retornar o JSON fictício
+        (fs.readFileSync as jest.Mock).mockReturnValue(JSON.stringify(mockData));
     });
 
-    it('deve carregar a hierarquia JSON corretamente', () => {
-        (fs.readFileSync as jest.Mock).mockReturnValue(JSON.stringify(hierarchyMock));
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
 
+    test('deve carregar e retornar a hierarquia corretamente', () => {
         const result = loadHierarchy();
 
-        expect(result).toEqual(hierarchyMock);
-        expect(fs.readFileSync).toHaveBeenCalledWith(path.resolve(__dirname, '../../dicts/hierarchy.json'), 'utf-8');
+        expect(fs.readFileSync).toHaveBeenCalledWith(mockFilePath, 'utf-8');
+        expect(result).toEqual(mockData);
     });
 
-    it('deve lançar um erro se o arquivo não puder ser carregado', () => {
+    test('deve lançar um erro se o arquivo não for encontrado', () => {
+        // Simula o comportamento de fs.readFileSync para lançar um erro
         (fs.readFileSync as jest.Mock).mockImplementation(() => {
-            throw new Error('Arquivo não encontrado');
+            throw new Error('File not found');
         });
 
-        expect(() => loadHierarchy()).toThrow('Arquivo não encontrado');
+        expect(() => loadHierarchy()).toThrow('File not found');
     });
 });

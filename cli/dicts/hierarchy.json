@@ -1,139 +1,46 @@
 {
-    "Natureza": {
-      "Animais": {
-        "Mamíferos": {
-          "Carnívoros": [
-            "Leões",
-            "Tigres",
-            "Onças",
-            "Lobos",
-            "Raposas"
-          ],
-          "Herbívoros": [
-            "Elefantes",
-            "Girafas",
-            "Búfalos",
-            "Rinocerontes"
-          ],
-          "Primatas": [
-            "Gorilas",
-            "Chimpanzés",
-            "Macacos",
-            "Orangotangos",
-            "Babuínos"
-          ]
-        },
-        "Aves": {
-          "Rapinas": [
-            "Águias",
-            "Falcões",
-            "Corujas",
-            "Milhafres"
-          ],
-          "Pássaros": [
-            "Canários",
-            "Papagaios",
-            "Pardais",
-            "Rouxinóis",
-            "Andorinhas"
-          ]
-        },
-        "Répteis": {
-          "Crocodilianos": [
-            "Crocodilos",
-            "Jacarés",
-            "Gaviais"
-          ],
-          "Serpentes": [
-            "Jiboias",
-            "Cascavéis",
-            "Najas",
-            "Pítons"
-          ]
-        },
-        "Peixes": {
-          "Cartilaginosos": [
-            "Tubarões",
-            "Raias"
-          ],
-          "Ósseos": [
-            "Salmão",
-            "Bacalhau",
-            "Tilápia",
-            "Truta"
-          ]
-        }
+  "Animais": {
+    "Mamíferos": {
+      "Carnívoros": {
+        "Felinos": [
+          "Leões",
+          "Tigres",
+          "Jaguars",
+          "Leopardos"
+        ]
       },
-      "Plantas": {
-        "Árvores": {
-          "Coníferas": [
-            "Pinheiros",
-            "Cedros",
-            "Ciprestes"
-          ],
-          "Frutíferas": [
-            "Macieiras",
-            "Pereiras",
-            "Laranjeiras",
-            "Limoeiros"
-          ]
-        },
-        "Flores": {
-          "Silvestres": [
-            "Margaridas",
-            "Girassóis",
-            "Papoulas"
-          ],
-          "Ornamentais": [
-            "Rosas",
-            "Tulipas",
-            "Lírios",
-            "Hortênsias"
-          ]
-        },
-        "Arbustos": {
-          "Medicinais": [
-            "Alecrim",
-            "Hortelã",
-            "Camomila",
-            "Lavanda"
-          ],
-          "Frutíferos": [
-            "Mirtilos",
-            "Amoras",
-            "Framboesas"
-          ]
-        }
+      "Herbívoros": {
+        "Equídeos": [
+          "Cavalos",
+          "Zebras",
+          "Asnos"
+        ],
+        "Bovídeos": [
+          "Bois",
+          "Búfalos",
+          "Antílopes",
+          "Cabras"
+        ]
       },
-      "Minerais": {
-        "Metais": {
-          "Preciosos": [
-            "Ouro",
-            "Prata",
-            "Platina"
-          ],
-          "Comuns": [
-            "Ferro",
-            "Cobre",
-            "Alumínio",
-            "Chumbo"
-          ]
-        },
-        "Pedras": {
-          "Preciosas": [
-            "Diamante",
-            "Safira",
-            "Esmeralda",
-            "Rubi"
-          ],
-          "Semipreciosas": [
-            "Quartzo",
-            "Topázio",
-            "Ametista",
-            "Turmalina"
-          ]
-        }
-      }
+      "Primatas": [
+        "Gorilas",
+        "Chimpanzés",
+        "Orangotangos"
+      ]
+    },
+    "Aves": {
+      "Rapinas": [
+        "Águias",
+        "Falcões",
+        "Corujas",
+        "Milhafres"
+      ],
+      "Pássaros": [
+        "Canários",
+        "Papagaios",
+        "Pardais",
+        "Rouxinóis"
+      ]
     }
   }
-  
+}

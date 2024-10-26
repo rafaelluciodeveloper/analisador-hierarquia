@@ -22,12 +22,8 @@ Este projeto consiste em duas aplicações para análise de hierarquia de palavr
 
 ## Pré-requisitos
 
-- **Node.js** e **npm**: [Instalar Node.js](https://nodejs.org/)
+- **Bun**: [Instalar Bun](https://bun.sh/)
 - **Git**: [Instalar Git](https://git-scm.com/)
-- **TypeScript**: Instale globalmente, caso ainda não tenha:
-  ```bash
-  npm install -g typescript
-  ```
 
 ---
 
@@ -52,26 +48,18 @@ Entre na pasta da CLI e instale as dependências:
 
 ```bash
 cd cli
-npm install
+bun install
 ```
 
-### 2. Compilação do TypeScript
-
-Compile o projeto para gerar os arquivos JavaScript:
-
-```bash
-tsc
-```
-
-### 3. Rodando a CLI
+### 2. Rodando a CLI
 
 Para rodar a CLI, execute o comando abaixo. Ele aceita uma frase e exibe a contagem de palavras em uma profundidade específica.
 
 ```bash
-node dist/cli.js analyze --depth <n> "frase a ser analisada" --verbose
+bun run cli.ts analyze --depth <n> "frase a ser analisada" --verbose
 ```
 
-### 4. Comandos Disponíveis
+### 3. Comandos Disponíveis
 
 | Comando                               | Descrição                                                                                        |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -84,15 +72,14 @@ node dist/cli.js analyze --depth <n> "frase a ser analisada" --verbose
 1. Analisando com profundidade e verbose:
 
    ```bash
-   node dist/cli.js analyze --depth 2 "Eu amo papagaios" --verbose
+    bun run cli.ts analyze --depth 3 "Eu amo papagaios" --verbose
    ```
 
 2. Analisando frase com múltiplas correspondências:
 
    ```bash
-   node dist/cli.js analyze --depth 3 "Eu vi gorilas e papagaios"
+   bun run cli.ts analyze --depth 3 "Eu vi gorilas e papagaios"
    ```
-
 ---
 
 ## Configuração da Aplicação Frontend
@@ -104,8 +91,8 @@ A aplicação frontend em React permite ao usuário criar e visualizar uma hiera
 Entre na pasta `frontend` e instale as dependências:
 
 ```bash
-cd ../frontend
-npm install
+cd frontend
+bun install
 ```
 
 ### 2. Rodando o Frontend
@@ -113,7 +100,7 @@ npm install
 Execute o seguinte comando para iniciar o servidor de desenvolvimento:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 A aplicação estará acessível em [http://localhost:5173](http://localhost:5173).
@@ -133,5 +120,5 @@ A aplicação estará acessível em [http://localhost:5173](http://localhost:517
 
    ```bash
    cd cli
-   npm test
+   bun run test
    ```
